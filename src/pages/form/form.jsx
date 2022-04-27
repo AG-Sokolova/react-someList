@@ -1,22 +1,21 @@
 import React from "react";
-import { AppRoute } from "../../const"
 
 import Header from "../../components/header/header"
 import Filter from "../../components/filter/filter"
 import Event from "../../components/event/event"
 
 
-const Form = () => {
+const Form = (props) => {
     return(
         <React.Fragment>
-        <Header mode={AppRoute.EVENT}/>
+        <Header />
         <section class="main__wrapper">
-            <Filter mode={AppRoute.EVENT}/>
+            <Filter mode={props.match.path}/>
             <section className="board">
-                <Event mode={AppRoute.EVENT} />
+                <Event mode={props.match.path}/>
             </section> 
         </section>  
-        </React.Fragment> 
+        </React.Fragment>
     );
 };
 
