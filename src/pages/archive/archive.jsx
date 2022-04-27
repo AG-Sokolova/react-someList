@@ -1,16 +1,16 @@
 import React from "react";
-import { AppRoute } from "../../const";
 
 import Board from "../../components/board/board";
 import Header from "../../components/header/header";
 
 
-const Archive = () => {
+const Archive = (props) => {
+    console.log(props.match.path)
     return (
         <React.Fragment> 
-        <Header mode={AppRoute.ARCHIVE} />
+        <Header mode={props.match.path} />
         <section className="main__wrapper">
-            <Board mode={AppRoute.ARCHIVE}/>
+            <Board mode={props.match.path} />
         </section>
         </React.Fragment>
     );

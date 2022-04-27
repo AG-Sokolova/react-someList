@@ -8,7 +8,6 @@ import NoEvents from "../no-events/no-events"
 
 
 const Board = ({mode}) => {
-    {console.log('board',mode)}
     return (
         <section className="board"> 
             {mode === AppRoute.MAIN && <Sorted />}
