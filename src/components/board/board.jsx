@@ -7,13 +7,13 @@ import LoadMore from "../load-more/load-more"
 import NoEvents from "../no-events/no-events"
 
 
-const Board = ({mode}) => {
+const Board = ({mode, events}) => {
     return (
         <section className="board"> 
             {mode === AppRoute.MAIN && <Sorted />}
             <div className="board__events">
-                {/* True ? <Card /> : <NoEvents /> */} 
-                <Card />
+                {/* True ? <Card /> : <NoEvents /> */}
+                {events.map(event => <Card {...event} key={event._id} />)}
             </div>
             {(mode === AppRoute.MAIN || mode === AppRoute.ARCHIVE) && <LoadMore />}
         </section>
