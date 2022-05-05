@@ -364,7 +364,11 @@ body {
   background-image: url('../img/archive.svg');
 }
 .card__btn--favorites {
-  background-image: url('../img/favorite.svg');
+  -webkit-mask: url('../img/favorite.svg');
+  -webkit-mask-size: cover;
+  mask: url('../img/favorite.svg');
+  mask-size: cover;
+  background-color: #000000;
 }
 .card__btn--remove {
   background-image: url('../img/remove.svg');
@@ -423,34 +427,4 @@ body {
   width: 100px;
   outline: none;
   border: 0;
-}
-
-div.notfound{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-div.notfound b{
-  font-size: 80px;
-}
-
-div.notfound p{
-  font-size: 30px;
-}
-
-.btn-home{
-  background-color: #1d4c69;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
 }

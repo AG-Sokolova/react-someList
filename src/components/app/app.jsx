@@ -8,14 +8,14 @@ import Form from "../../pages/form/form";
 import NotFound from "../../pages/not-found/not-found";
 
 
-const App = () => {
+const App = ({events}) => {
     return(
         <BrowserRouter>
             <Switch>
-                <Route exact path={AppRoute.MAIN} component={Main} />
-                <Route exact path={AppRoute.ARCHIVE} component={Archive} />
-                <Route exact path={AppRoute.EVENT /*Редактирование*/} component={Form} />
-                <Route exact path={AppRoute.ADD /*Добавление*/} component={Form} />
+                <Route exact path={AppRoute.MAIN}> <Main events={events} /> </Route>
+                <Route exact path={AppRoute.ARCHIVE}> <Archive events={events} /> </Route> 
+                <Route exact path={AppRoute.EVENT /*Редактирование*/}> <Form events={events}/> </Route>
+                <Route exact path={AppRoute.ADD /*Добавление*/}> <Form/> </Route>
                 <Route component={NotFound} />
             </Switch>
         </BrowserRouter>
